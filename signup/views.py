@@ -16,7 +16,7 @@ password=''
 def signaction(request):
     global m_id,email,first_name,last_name,dept_name,dept_id,location,password
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="lavish",database='users')
+        m=sql.connect(host="localhost",user="root",passwd="lavish",database='user')
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():

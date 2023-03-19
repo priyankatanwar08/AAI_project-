@@ -1,21 +1,21 @@
 from django.shortcuts import render
 import mysql.connector as sql
-em=''
-pwd=''
+m_id=''
+password=''
 # Create your views here.
 def loginaction(request):
-    global em,pwd
+    global m_id,password
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="vivek",database='website')
+        m=sql.connect(host="localhost",user="root",passwd="lavish",database='user')
         cursor=m.cursor()
         d=request.POST
         for key,value in d.items():
-            if key=="email":
-                em=value
+            if key=="m_id":
+                m_id=value
             if key=="password":
-                pwd=value
+                password=value
         
-        c="select * from users where email='{}' and password='{}'".format(em,pwd)
+        c="select * from users where m_id='{}' and password='{}'".format(m_id,password)
         cursor.execute(c)
         t=tuple(cursor.fetchall())
         if t==():
