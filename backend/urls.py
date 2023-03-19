@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main.views import submit_data
+from signup.views import signaction
+from login.views import loginaction
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('base.urls')),
     path('main/',submit_data),
+    path('signup/',signaction),
+    path('login/',loginaction),
 ]
