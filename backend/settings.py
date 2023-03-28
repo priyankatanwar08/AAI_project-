@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'signup',
     'login',
     'main',
+    'project_approved',
 ]
 
 MIDDLEWARE = [
